@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poovakkundil Family | പൂവ്വക്കുണ്ടിൽ കുടുംബം</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0B5563;--teal-2:#0f7a80;--teal-d:#073B46;--mint:#1aa39a;
+  --gold:#C8A24A;--gold-l:#F2D98B;--cream:#FBF5E6;
+  --ink:#16292d;--muted:#5d7377;--line:#0f7a80;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 34px rgba(7,59,70,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;color:var(--ink);
+  font-family:"Noto Sans","Noto Sans Malayalam",system-ui,sans-serif;
+  background:
+    radial-gradient(900px 500px at -10% -10%,#d9f0ee 0%,transparent 60%),
+    radial-gradient(800px 500px at 110% 0%,#fbf0d2 0%,transparent 55%),
+    linear-gradient(180deg,#f4f9f8,#eef4f3);
+  background-attachment:fixed;
+}
+
+/* ---------- app bar ---------- */
+header{
+  position:sticky;top:0;z-index:20;
+  background:linear-gradient(120deg,var(--teal-d),var(--teal) 55%,var(--teal-2));
+  color:#fff;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;box-shadow:0 6px 24px rgba(7,59,70,.25);
+}
+header h1{margin:0;font-family:"Noto Sans Malayalam",sans-serif;font-size:22px;font-weight:700;letter-spacing:.3px}
+header .sub{font-size:12.5px;opacity:.8;letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+.brand-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--gold);margin-right:10px;box-shadow:0 0 0 4px rgba(200,162,74,.25);animation:pulse 2.4s infinite}
+
+nav{display:flex;gap:6px;padding:14px 20px 0;max-width:1200px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+nav button{
+  background:rgba(255,255,255,.6);border:1px solid #d3e3e3;color:var(--muted);
+  padding:10px 20px;border-radius:999px;font:inherit;font-size:14.5px;cursor:pointer;
+  transition:all .25s ease;
+}
+nav button:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(7,59,70,.12);color:var(--teal)}
+nav button.active{background:linear-gradient(120deg,var(--teal),var(--teal-2));color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(11,85,99,.35)}
+
+main{max-width:1200px;margin:0 auto;padding:24px 20px 70px}
+.tab{display:none}
+.tab.active{display:block;animation:fadeUp .6s ease both}
+
+/* ---------- animations ---------- */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(200,162,74,.25)}50%{box-shadow:0 0 0 8px rgba(200,162,74,0)}}
+@keyframes flicker{0%,100%{opacity:.95;transform:scale(1)}30%{opacity:.7;transform:scale(.92)}60%{opacity:1;transform:scale(1.06)}80%{opacity:.8;transform:scale(.97)}}
+@keyframes sway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.4deg)}}
+@keyframes fall{0%{transform:translate(0,-10vh) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translate(60px,110vh) rotate(540deg);opacity:0}}
+@keyframes sunpulse{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+
+/* ---------- hero (tharavadu) ---------- */
+.hero{
+  position:relative;overflow:hidden;border-radius:30px;
+  background:linear-gradient(180deg,#86d6d6 0%,#c9ece6 48%,#f1f8ec 80%,#dcefd6 100%);
+  padding:44px 24px 0;text-align:center;box-shadow:var(--shadow);
+  animation:fadeUp .9s ease both;
+}
+.hero::after{ /* soft light beams */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);
+  background-size:250% 100%;animation:shimmer 8s linear infinite;
+}
+.kicker{
+  display:inline-block;margin:0;padding:6px 16px;border-radius:999px;
+  background:rgba(255,255,255,.65);color:#8a6a1f;font-family:"Noto Sans Malayalam",sans-serif;
+  font-size:15px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+.hero-title{
+  margin:14px 0 6px;font-size:clamp(34px,5.4vw,58px);font-weight:700;letter-spacing:.5px;line-height:1.1;
+  background:linear-gradient(90deg,#073B46,#0f8a86,#B8892E,#073B46);background-size:250% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 7s linear infinite;
+}
+.hero-sub{margin:0;color:#2f5a60;font-size:15px;letter-spacing:.4px}
+.house{
+  width:min(920px,100%);height:auto;display:block;margin:18px auto 0;position:relative;z-index:1;
+  animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both;
+}
+.palm{transform-box:fill-box;transform-origin:50% 100%;animation:sway 6s ease-in-out infinite}
+.palm.r{animation-delay:-3s}
+.lamp{transform-box:fill-box;transform-origin:center;animation:flicker 2.6s ease-in-out infinite}
+.sun{transform-box:fill-box;transform-origin:center;animation:sunpulse 5s ease-in-out infinite}
+.leaf-fall{position:absolute;top:-30px;width:14px;height:14px;background:linear-gradient(135deg,#7bc47f,#2f8f5b);border-radius:0 60% 0 60%;opacity:0;pointer-events:none;animation:fall linear infinite}
+
+/* ---------- glass history box ---------- */
+.glass{
+  background:var(--glass);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
+  border:1px solid rgba(255,255,255,.75);border-radius:22px;box-shadow:var(--shadow);
+}
+.history-box{
+  position:relative;margin:28px auto 0;max-width:960px;padding:34px 44px 30px;overflow:hidden;
+  animation:fadeUp .9s .25s ease both;
+}
+.history-box::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:5px;
+  background:linear-gradient(90deg,var(--teal),var(--mint),var(--gold),var(--teal));background-size:200% 100%;
+  animation:shimmer 6s linear infinite;
+}
+.history-box h2{
+  font-family:"Noto Sans Malayalam",sans-serif;color:var(--teal);font-size:28px;margin:0 0 22px;text-align:center;
+}
+.history-box h2::after{content:"";display:block;width:90px;height:3px;margin:12px auto 0;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold-l))}
+.history-box p{
+  font-family:"Noto Sans Malayalam",sans-serif;font-size:17px;line-height:2;text-align:justify;text-indent:2.5em;margin:0 0 16px;color:#1f3337;
+}
+.history-box p:last-child{margin-bottom:0}
+
+/* ---------- family trees layout ---------- */
+.layout{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:start}
+@media(max-width:820px){.layout{grid-template-columns:1fr}}
+.side{position:sticky;top:90px}
+.side button{
+  display:block;width:100%;text-align:left;background:rgba(255,255,255,.75);border:1px solid rgba(15,122,128,.12);
+  border-radius:16px;padding:12px 16px;margin-bottom:9px;cursor:pointer;color:var(--ink);
+  font-family:"Noto Sans Malayalam",sans-serif;font-size:14.5px;transition:all .25s ease;box-shadow:0 2px 8px rgba(7,59,70,.05);
+}
+.side button:hover{transform:translateX(5px);border-color:var(--mint);box-shadow:0 8px 18px rgba(7,59,70,.12)}
+.side button small{display:block;color:var(--muted);font-family:"Noto Sans",sans-serif;font-size:12px;margin-top:3px}
+.side button.active{background:linear-gradient(120deg,var(--teal),var(--teal-2));color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(11,85,99,.3)}
+.side button.active small{color:#d4eeee}
+
+.tree-page{display:none;padding:30px 30px 26px;animation:fadeUp .6s ease both}
+.tree-page.active{display:block}
+.tree-page h2{font-family:"Noto Sans Malayalam",sans-serif;color:var(--teal);margin:0 0 4px;font-size:26px}
+.tree-page .meta{color:var(--muted);font-size:13px;margin-bottom:16px;letter-spacing:.3px}
+.tree-scroll{
+  overflow-x:auto;padding:10px 0 18px;border-radius:18px;
+  background:
+    radial-gradient(circle at 1px 1px,rgba(11,85,99,.12) 1px,transparent 1.5px) 0 0/22px 22px,
+    linear-gradient(180deg,#f7fcfc,#eef7f6);
+  border:1px solid rgba(15,122,128,.12);
+}
+
+/* ---------- tree connectors ---------- */
+.tree{display:flex;justify-content:center;list-style:none;margin:0;padding:0;min-width:max-content}
+.tree ul{display:flex;justify-content:center;list-style:none;margin:0;padding:22px 0 0;position:relative}
+.tree li{position:relative;text-align:center;padding:22px 8px 0;list-style:none;flex:none}
+.tree > li{padding-top:0}
+.tree li::before,.tree li::after{content:'';position:absolute;top:0;right:50%;width:50%;height:22px;border-top:1.6px solid var(--line);opacity:.7}
+.tree li::after{right:auto;left:50%;border-left:1.6px solid var(--line)}
+.tree li:only-child{padding-top:0}
+.tree li:only-child::before,.tree li:only-child::after{display:none}
+.tree li:first-child::before,.tree li:last-child::after{border:0 none}
+.tree li:last-child::before{border-right:1.6px solid var(--line);border-radius:0 8px 0 0}
+.tree li:first-child::after{border-radius:8px 0 0 0}
+.tree ul::before{content:'';position:absolute;top:0;left:50%;border-left:1.6px solid var(--line);opacity:.7;width:0;height:22px}
+
+.node{
+  display:inline-block;position:relative;z-index:1;background:#fff;
+  border:1px solid rgba(15,122,128,.35);border-top:3px solid var(--mint);border-radius:12px;
+  padding:6px 12px;font-family:"Noto Sans Malayalam","Noto Sans",sans-serif;font-size:14px;line-height:1.55;
+  min-width:86px;max-width:215px;box-shadow:0 6px 14px rgba(7,59,70,.10);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  animation:pop .45s ease both;
+}
+.node:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 24px rgba(7,59,70,.18);border-top-color:var(--gold)}
+.node .yr{display:block;font-family:"Noto Sans",sans-serif;font-weight:700;font-size:12px;color:#94702a;margin-top:2px;letter-spacing:.5px}
+.node.root{background:linear-gradient(135deg,var(--teal),var(--teal-2));color:#fff;font-weight:600;font-size:15px;border:none;padding:9px 18px;box-shadow:0 10px 22px rgba(11,85,99,.35)}
+.node.root .yr{color:var(--gold-l)}
+.node.late{border-style:dashed}
+
+/* ---------- photos ---------- */
+.photos{margin-top:26px;border-top:1px solid rgba(15,122,128,.12);padding-top:20px}
+.photos h3{margin:0 0 6px;color:var(--teal);font-size:19px}
+.photos .hint{font-size:13px;color:var(--muted);margin:0 0 14px}
+.upload{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.upload input[type=file]{font:inherit;font-size:13.5px;padding:10px;border:2px dashed rgba(15,122,128,.35);border-radius:14px;background:#f8fdfd;width:100%;cursor:pointer;transition:border-color .2s}
+.upload input[type=file]:hover{border-color:var(--mint)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+.ph{background:#fff;border:1px solid rgba(15,122,128,.12);border-radius:16px;padding:9px;text-align:center;box-shadow:0 6px 14px rgba(7,59,70,.07);transition:transform .25s ease,box-shadow .25s ease;animation:pop .4s ease both}
+.ph:hover{transform:translateY(-4px);box-shadow:0 14px 26px rgba(7,59,70,.16)}
+.ph img{width:100%;height:160px;object-fit:cover;border-radius:11px;display:block;background:#eef3f4}
+.ph input{width:100%;margin-top:8px;padding:7px 9px;border:1px solid #d4e1e3;border-radius:9px;font:inherit;font-size:13px;outline:none;transition:border-color .2s}
+.ph input:focus{border-color:var(--mint)}
+.ph button{margin-top:6px;background:none;border:0;color:#b5443f;cursor:pointer;font:inherit;font-size:13px}
+.empty{color:var(--muted);font-size:14px;font-style:italic}
+.note{font-size:12.5px;color:var(--muted);margin-top:12px}
+
+.btn{
+  background:linear-gradient(120deg,var(--teal),var(--teal-2));color:#fff;border:0;border-radius:12px;
+  padding:10px 20px;cursor:pointer;font:inherit;font-size:14.5px;box-shadow:0 8px 18px rgba(11,85,99,.25);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(11,85,99,.32)}
+.btn:active{transform:translateY(0)}
+
+/* ---------- committee ---------- */
+.card{background:var(--glass);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.75);border-radius:22px;box-shadow:var(--shadow);padding:30px 34px;animation:fadeUp .7s ease both}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:16px}
+.form-grid label{display:flex;flex-direction:column;font-size:13px;color:var(--muted);gap:6px}
+.form-grid input,.form-grid select{padding:10px 12px;border:1px solid #d4e1e3;border-radius:11px;font:inherit;font-size:14px;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;color:var(--ink)}
+.form-grid input:focus,.form-grid select:focus{border-color:var(--mint);box-shadow:0 0 0 4px rgba(26,163,154,.15)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-top:20px;font-size:14.5px;overflow:hidden;border-radius:14px}
+th,td{text-align:left;padding:12px 12px;border-bottom:1px solid #e3eeef}
+th{background:linear-gradient(120deg,#e6f3f3,#f1f8f0);color:var(--teal);font-weight:700}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:#f4fafa}
+td button{background:none;border:0;color:#b5443f;cursor:pointer;font:inherit;padding:4px 8px;border-radius:8px}
+td button:hover{background:#fbe9e8}
+#cEmpty{margin-top:16px}
+/* ---------- language toggle & static photos ---------- */
+.lang-switch{display:flex;justify-content:flex-end;margin:-6px 0 14px}
+.lang-switch button{border:1px solid rgba(15,122,128,.3);background:#fff;color:var(--teal);padding:7px 16px;border-radius:999px;cursor:pointer;font:inherit;font-size:13.5px;transition:all .2s}
+.lang-switch button:first-child{border-radius:999px 0 0 999px}
+.lang-switch button:last-child{border-radius:0 999px 999px 0;margin-left:-1px}
+.lang-switch button.on{background:linear-gradient(120deg,var(--teal),var(--teal-2));color:#fff;border-color:transparent}
+.lang-en{display:none}
+body.lang-en-on .lang-ml{display:none}
+body.lang-en-on .lang-en{display:block}
+.history-box .lang-en h2{font-family:"Noto Sans",sans-serif}
+.history-box p.en{font-family:"Noto Sans",sans-serif;font-size:16px;line-height:1.85;text-align:justify;text-indent:0;color:#1f3337;margin:0 0 16px}
+.history-box .lang-en > p.en:last-child{margin-bottom:0}
+.ph figcaption{margin-top:8px;font-size:13.5px;color:var(--ink)}
+.photos .gallery .ph img{background:#eef3f4}
+
+/* ---------- mobile ---------- */
+@media (max-width:768px){
+  header{padding:12px 16px}
+  header h1{font-size:18px}
+  header .sub{font-size:11px;letter-spacing:1.5px}
+  nav{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:12px 12px 0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav::-webkit-scrollbar{display:none}
+  nav button{flex:none;padding:9px 15px;font-size:13.5px;white-space:nowrap}
+  main{padding:16px 12px 48px}
+  .hero{padding:26px 12px 0;border-radius:22px}
+  .kicker{font-size:13px;padding:5px 12px}
+  .hero-title{font-size:clamp(28px,9vw,40px);margin:10px 0 4px}
+  .hero-sub{font-size:13px}
+  .house{margin-top:12px}
+  .history-box{padding:24px 20px 22px;border-radius:18px;margin-top:20px}
+  .history-box h2{font-size:21px}
+  .history-box p{font-size:15.5px;line-height:1.9;text-indent:1.5em}
+  .history-box p.en{font-size:15px;line-height:1.75;text-indent:0}
+  .lang-switch{justify-content:center;margin:0 0 14px}
+  .layout{gap:14px;grid-template-columns:minmax(0,1fr)}
+  .layout > *{min-width:0}
+  .tree-page{min-width:0;max-width:100%}
+  .side{position:static;display:flex;overflow-x:auto;gap:10px;padding:2px 2px 8px;scrollbar-width:none}
+  .side::-webkit-scrollbar{display:none}
+  .side button{flex:none;width:auto;min-width:210px;margin-bottom:0}
+  .side button:hover{transform:none}
+  .tree-page{padding:18px 14px}
+  .tree-page h2{font-size:21px}
+  .tree-page .meta{font-size:12px;margin-bottom:12px}
+  .tree-scroll{padding:8px 0 12px;border-radius:14px}
+  .tree{justify-content:flex-start;margin:0 auto}
+  .tree ul{padding-top:18px}
+  .tree li{padding:18px 3px 0}
+  .tree li::before,.tree li::after,.tree ul::before{height:18px}
+  .node{font-size:12.5px;min-width:72px;max-width:132px;padding:4px 8px;line-height:1.45}
+  .node .yr{font-size:11px}
+  .node:hover{transform:none}
+  .photos{margin-top:20px;padding-top:16px}
+  .photos h3{font-size:17px}
+  .upload input[type=file]{font-size:13px}
+  .gallery{grid-template-columns:repeat(2,1fr);gap:10px}
+  .ph{padding:6px;border-radius:12px}
+  .ph img{height:120px;border-radius:9px}
+  .ph figcaption{font-size:12.5px}
+  .card{padding:20px 16px;border-radius:18px}
+  .card h2{font-size:20px}
+  .form-grid{grid-template-columns:1fr;gap:10px}
+  .btn{width:100%}
+  table{display:block;overflow-x:auto;white-space:nowrap;font-size:13px;-webkit-overflow-scrolling:touch}
+  th,td{padding:9px 8px}
+}
+@media (max-width:380px){
+  .hero-title{font-size:26px}
+  .gallery{grid-template-columns:1fr}
+  .node{max-width:120px;min-width:64px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1><span class="brand-dot"></span>പൂവ്വക്കുണ്ടിൽ കുടുംബം</h1>
+    <div class="sub">Poovakkundil Family</div>
+  </div>
+</header>
+
+<nav>
+  <button class="tab-btn active" data-tab="history">ചരിത്രം · History</button>
+  <button class="tab-btn" data-tab="trees">കുടുംബ പരമ്പര · Family Trees</button>
+  <button class="tab-btn" data-tab="committee">കമ്മിറ്റി · Committee</button>
+</nav>
+
+<main>
+
+<!-- ============ HISTORY ============ -->
+  <section id="tab-history" class="tab active">
+    <div class="hero">
+      <span class="leaf-fall" style="left:8%;animation-duration:12s;animation-delay:0s"></span>
+      <span class="leaf-fall" style="left:24%;animation-duration:15s;animation-delay:3s"></span>
+      <span class="leaf-fall" style="left:52%;animation-duration:13s;animation-delay:6s"></span>
+      <span class="leaf-fall" style="left:70%;animation-duration:16s;animation-delay:1s"></span>
+      <span class="leaf-fall" style="left:90%;animation-duration:14s;animation-delay:8s"></span>
+
+      <p class="kicker">പൂവ്വക്കുണ്ടിൽ കുടുംബം</p>
+      <h1 class="hero-title">Poovakkundil Family</h1>
+      <p class="hero-sub">Ancestral Tharavadu · Alipparamba · Kerala</p>
+
+      <svg class="house" viewBox="0 0 1000 420" role="img" aria-label="Traditional Kerala tharavadu house">
+        <defs>
+          <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6DF"/><stop offset="1" stop-color="#E9CD9B"/></linearGradient>
+          <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B0532F"/><stop offset="1" stop-color="#6A2817"/></linearGradient>
+          <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6E4322"/><stop offset=".45" stop-color="#A36F3D"/><stop offset="1" stop-color="#5E3A1D"/></linearGradient>
+          <linearGradient id="leafg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4FB473"/><stop offset="1" stop-color="#1D5E3B"/></linearGradient>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF3C4"/><stop offset="1" stop-color="#FFF3C4" stop-opacity="0"/></linearGradient>
+          <radialGradient id="glow"><stop offset="0" stop-color="#FFE08A" stop-opacity="1"/><stop offset="1" stop-color="#FFE08A" stop-opacity="0"/></radialGradient>
+          <pattern id="tiles" width="22" height="16" patternUnits="userSpaceOnUse">
+            <path d="M0 16 Q11 0 22 16" fill="none" stroke="#3A1408" stroke-width="2" opacity=".5"/>
+          </pattern>
+          <path id="frond" d="M0 0 C30 -26 80 -30 120 4 C84 -4 42 -2 0 0 Z" fill="url(#leafg)"/>
+        </defs>
+
+        <!-- sun -->
+        <circle class="sun" cx="860" cy="70" r="46" fill="url(#glow)"/>
+        <circle cx="860" cy="70" r="20" fill="#FFF0B0"/>
+
+        <!-- ground -->
+        <ellipse cx="500" cy="392" rx="480" ry="26" fill="#8ccf86" opacity=".6"/>
+        <ellipse cx="500" cy="384" rx="330" ry="14" fill="#6fb873" opacity=".5"/>
+
+        <!-- left palm -->
+        <g class="palm">
+          <path d="M120 392 Q94 300 128 200" stroke="#7A5230" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <g transform="translate(128 200)">
+            <use href="#frond" transform="rotate(-172)"/>
+            <use href="#frond" transform="rotate(-135)"/>
+            <use href="#frond" transform="rotate(-95)"/>
+            <use href="#frond" transform="rotate(-55)"/>
+            <use href="#frond" transform="rotate(-18)"/>
+            <use href="#frond" transform="rotate(12)"/>
+          </g>
+        </g>
+
+        <!-- right palm -->
+        <g class="palm r">
+          <path d="M880 392 Q906 300 872 200" stroke="#7A5230" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <g transform="translate(872 200)">
+            <use href="#frond" transform="rotate(-8)"/>
+            <use href="#frond" transform="rotate(-42) scale(-1 1)"/>
+            <use href="#frond" transform="rotate(-85) scale(-1 1)"/>
+            <use href="#frond" transform="rotate(-125) scale(-1 1)"/>
+            <use href="#frond" transform="rotate(-160) scale(-1 1)"/>
+            <use href="#frond" transform="rotate(-195) scale(-1 1)"/>
+          </g>
+        </g>
+
+        <!-- plinth & steps -->
+        <rect x="212" y="338" width="576" height="32" rx="4" fill="#C9A677"/>
+        <rect x="212" y="338" width="576" height="6" fill="#E2C79B"/>
+        <rect x="440" y="362" width="120" height="12" rx="3" fill="#B38C5C"/>
+
+        <!-- walls -->
+        <rect x="236" y="250" width="528" height="92" fill="url(#wall)" stroke="#6B4A2B" stroke-width="2"/>
+
+        <!-- front hip roof -->
+        <polygon points="138,254 862,254 764,150 236,150" fill="url(#roof)"/>
+        <polygon points="138,254 862,254 764,150 236,150" fill="url(#tiles)"/>
+        <rect x="128" y="246" width="744" height="12" rx="4" fill="#4A1C0E"/>
+
+        <!-- central gable & ridge -->
+        <polygon points="356,152 644,152 500,56" fill="url(#roof)"/>
+        <polygon points="356,152 644,152 500,56" fill="url(#tiles)"/>
+        <rect x="468" y="46" width="64" height="12" rx="3" fill="#3A1408"/>
+        <circle cx="500" cy="36" r="8" fill="#D9A441"/>
+        <circle cx="500" cy="36" r="3.5" fill="#FFF2B8"/>
+
+        <!-- veranda beam & pillars -->
+        <rect x="216" y="240" width="568" height="14" rx="3" fill="url(#wood)"/>
+        <g fill="url(#wood)">
+          <rect x="246" y="254" width="16" height="86" rx="2"/>
+          <rect x="326" y="254" width="16" height="86" rx="2"/>
+          <rect x="406" y="254" width="16" height="86" rx="2"/>
+          <rect x="578" y="254" width="16" height="86" rx="2"/>
+          <rect x="658" y="254" width="16" height="86" rx="2"/>
+          <rect x="738" y="254" width="16" height="86" rx="2"/>
+        </g>
+
+        <!-- central door -->
+        <rect x="455" y="272" width="90" height="68" rx="2" fill="#5B3420"/>
+        <rect x="462" y="279" width="33" height="54" fill="none" stroke="#A36F3D" stroke-width="2"/>
+        <rect x="505" y="279" width="33" height="54" fill="none" stroke="#A36F3D" stroke-width="2"/>
+        <circle cx="500" cy="306" r="2.5" fill="#D9A441"/>
+
+        <!-- hanging lamp (kuthuvilakku glow) -->
+        <line x1="500" y1="254" x2="500" y2="268" stroke="#6B4A2B" stroke-width="1.5"/>
+        <circle class="lamp" cx="500" cy="272" r="48" fill="url(#glow)" opacity=".9"/>
+        <circle cx="500" cy="270" r="5" fill="#FFD36B"/>
+
+        <!-- windows with grills -->
+        <g>
+          <rect x="296" y="278" width="76" height="48" rx="2" fill="#5B3420"/>
+          <line x1="321" y1="278" x2="321" y2="326" stroke="#A36F3D" stroke-width="2"/>
+          <line x1="346" y1="278" x2="346" y2="326" stroke="#A36F3D" stroke-width="2"/>
+          <line x1="296" y1="302" x2="372" y2="302" stroke="#A36F3D" stroke-width="2"/>
+          <rect x="628" y="278" width="76" height="48" rx="2" fill="#5B3420"/>
+          <line x1="653" y1="278" x2="653" y2="326" stroke="#A36F3D" stroke-width="2"/>
+          <line x1="678" y1="278" x2="678" y2="326" stroke="#A36F3D" stroke-width="2"/>
+          <line x1="628" y1="302" x2="704" y2="302" stroke="#A36F3D" stroke-width="2"/>
+        </g>
+
+        <!-- tulsi thara -->
+        <path d="M150 320 h42 l-6 24 h-30 z" fill="#B5562F"/>
+        <ellipse cx="171" cy="310" rx="22" ry="15" fill="#3C9A5F"/>
+        <ellipse cx="160" cy="306" rx="9" ry="6" fill="#58B97A"/>
+        <ellipse cx="182" cy="304" rx="8" ry="6" fill="#58B97A"/>
+      </svg>
+    </div>
+
+    <div class="glass history-box">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="ml" class="on">മലയാളം</button>
+        <button type="button" data-lang="en">English</button>
+      </div>
+      <div class="lang-ml">
+        <h2>പൂവ്വക്കുണ്ടിൽ കുടുംബ ചരിത്രം</h2>
+        <p>പത്തൊമ്പതാം നൂറ്റാണ്ടിന്റെ അവസാനം മമ്മുട്ടി , ആലിയമ്മു എന്നീ രണ്ട് പൂവ്വക്കുണ്ടിൽ കുടുംബാംഗങ്ങൾ ആലിപ്പറമ്പിൽ എത്തിയതായി കണക്കാക്കുന്നു. ഇവരിൽ നിന്നാണ് ഈ കുടുംബത്തിന്റെ ആരംഭം. നടുവിലെക്കുടി എന്നറിയപ്പെട്ടിരുന്ന വീട്ടിലാണ് ഇവർ ആദ്യമായി താമസമാക്കിയത്. ഈ രണ്ട് പേരുടേയുംപിതാവ് ഉണ്ണീൻ ആണ്. അദ്ദേഹം ആലപ്പറമ്പിൽ വന്നിട്ടില്ല. മമ്മുട്ടി , ആലിയമ്മു എന്നിവർ താഴെക്കോട് നിന്നാണ് ആലിപ്പറമ്പിൽ എത്തുന്നത്. ഇവരുടെ മാതാവിനെ ഉണ്ണീൻ എന്നവരുടെ മരണശേഷം കാവുണ്ടത്ത് കുടുംബത്തിൽ നിന്ന് ഒരാൾ കല്യാണം കഴിച്ചിരുന്നു. അതിലുണ്ടായ സന്താന പരമ്പരയാണ് താഴെക്കോട്ടെ കാവുണ്ടത്ത് കുടുംബത്തിലെ ഒരു വിഭാഗം.</p>
+<p>കുമരംപുത്തൂർ ഭാഗത്ത് നിന്നാണ് പൂവക്കുണ്ടിൽ കുടുംബക്കാർ താഴെക്കോട് എത്തിയത് എന്നാണ് കരുതുന്നത്. 1921 ലെ മലബാർ കലാപത്തിൽ പൂവക്കുണ്ടിൽ കുടുംബത്തിൽ പെട്ട മായിൻ ഹാജി, അലവി എന്നിവരെ ബ്രിട്ടീഷ് പട്ടാളം കുമരംപുത്തൂരിൽ നിന്നും പിടിച്ച് കൊണ്ട് പോവുകയും അവരെ ആൻഡമാനിലെ സെല്ലുലാർ ജയിലിൽ അടക്കുകയും ചെയ്തിട്ടുണ്ട്. ഇവരുടെ ഫോട്ടോകൾ പോർട്ട് ബ്ലെയറിലെ സെല്ലുലാർ ജയിലിലുള്ള ഫോട്ടോ ഗാലറിയിൽ ഉണ്ട്. ഇവരുടെ സന്താന പരമ്പരയിൽ പെട്ടവരാണ് ഇപ്പോൾ ആൻഡമാനിലുള്ള പൂവക്കുണ്ടിൽ കുടുംബക്കാർ. ഇവർ 100 ലധികം വീടുകളുണ്ടെന്നാണ് അന്വേഷണത്തിൽ അറിയാൻ കഴിഞ്ഞത്. ഇവരിൽ ചിലരുമായി നാം ഇപ്പോൾ ബന്ധപ്പെടാൻ ശ്രമിച്ച് കൊണ്ടിരിക്കുന്നു. മമ്മുട്ടി , ആലിയമ്മു എന്നിവരുടെ പിൻഗാമികളായി 50 ഓളം വീട്ടുകാരാണ് ഇപ്പോൾ ഉള്ളത്. മൂന്ന് വീടുകൾ കട്ടുപ്പാറയിലും ബാക്കി ആലിപ്പറമ്പിലും. നടുവിലെകുടി എന്നറിയപ്പെടുന്ന സ്ഥലത്താണ് ആദ്യം ഈ കുടുംബം താമസമാക്കിയത്.</p>
+<p>പിന്നീട് ഖാദർ ഹാജി താമസിച്ചിരുന്ന പാമ്പുംകുഴി പറമ്പ്, മമ്മദാജി താമസിച്ചിരുന്ന പടിഞ്ഞാറെ കുടി എന്നിവ വാങ്ങിച്ചു. ഇത് രണ്ടും വന്നതിന് ശേഷമാണ് ആദ്യ തറവാടിന് നടുവിലെ കുടി എന്ന പേര് സിദ്ധിച്ചത്. ഇതിനിടയിൽ ആലിയമ്മു എന്നവർ മൂലക്കഞ്ചേരി എന്ന സ്ഥലത്ത് താമസമാക്കി. ക്രമേണ ഇന്നത്തെ രീതിയിലുള്ള 50 ഓളം വീടുകളായി. ഇതിന്റെ ചാർട്ടുകൾ അന്യത്ര പരിചയപ്പെടുത്തുന്നതായിരിക്കും.</p>
+      </div>
+      <div class="lang-en">
+        <h2>Poovakkundil Family History</h2>
+        <p class="en">At the end of the nineteenth century, Mammutti and Aliyammu, two members of the Poovakkundil family, are believed to have arrived at Alipparamba. The family's beginnings lie with them. They first settled in the house known as Naduvilekkudi. Their father was Unneen, who never came to Alipparamba. Mammutti and Aliyammu came to Alipparamba from Thazhekkode. After Unneen's death, their mother married a man from the Kavundath family, and the descendants of that marriage form a branch of the Kavundath family in Thazhekkode.</p>
+        <p class="en">The Poovakkundil family is believed to have come to Thazhekkode from the Kumaramputhur area. During the Malabar Rebellion of 1921, the British army seized Mayin Haji and Alavi of the Poovakkundil family from Kumaramputhur and imprisoned them in the Cellular Jail in the Andamans. Their photographs are in the photo gallery of the Cellular Jail at Port Blair. The Poovakkundil family members now living in the Andamans are descended from them. Research has found more than 100 houses among them. We are currently trying to contact some of them. About 50 households today descend from Mammutti and Aliyammu: three houses are in Kattuppara and the rest in Alipparamba. The family first settled in the place known as Naduvilekkudi.</p>
+        <p class="en">Later the family bought the Pampumkuzhi parambu, where Khadar Haji lived, and the Padinjaare kudi, where Mammadaji lived. Only after these two were acquired did the original homestead take the name Naduvile kudi. Meanwhile Aliyammu settled in a place called Moolakkancheri. Gradually these grew into about 50 houses in today's arrangement. Their family charts are presented separately.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAMILY TREES ============ -->
+  <section id="tab-trees" class="tab">
+    <div class="layout">
+      <aside class="side" id="treeNav"></aside>
+      <div id="treePages"></div>
+    </div>
+  </section>
+
+  <!-- ============ COMMITTEE ============ -->
+  <section id="tab-committee" class="tab">
+    <div class="card">
+      <h2 style="font-family:'Noto Sans Malayalam',sans-serif;color:var(--teal);margin:0 0 6px">കമ്മിറ്റി അംഗങ്ങൾ · Committee Members</h2>
+      <p class="note" style="margin:0 0 18px">Committee details are maintained on the page itself.</p>
+
+      <table>
+        <thead><tr><th>#</th><th>Name</th><th>Role</th><th>Phone</th><th>Email</th><th>Place</th></tr></thead>
+        <tbody id="cBody"></tbody>
+      </table>
+      <div id="cEmpty" class="empty" style="margin-top:14px">Committee members will be listed here.</div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+
+/* ---------- language toggle (history) ---------- */
+document.querySelectorAll('.lang-switch button').forEach(b => {
+  b.addEventListener('click', () => {
+    const en = b.dataset.lang === 'en';
+    document.body.classList.toggle('lang-en-on', en);
+    document.querySelectorAll('.lang-switch button').forEach(x => x.classList.toggle('on', x === b));
+    document.documentElement.lang = en ? 'en' : 'ml';
+  });
+});
+
+/* ---------- tab switching ---------- */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---------- family tree data ----------
+   Node format: [ "Name|Year", [children...] ]   (children optional)
+   Use "|" to attach a year. Root nodes get a highlighted style.        */
+const TREES = [
+{
+  id: 't1', title: 'ഉണ്ണീൻ I — ആദ്യ തലമുറ', sub: 'Founder generation · page 1', root: ['ഉണ്ണീൻ I|1847'],
+  data: [["ഉണ്ണീൻ I|1847", [
+    ["മമ്മുട്ടി|1870", [
+      ["അയമു|1893", [
+        ["മമ്മദ്ഹാജി|1912"],
+        ["ഐദ്രു മുസ്ലിയാർ|1915"],
+        ["പാത്തുണ്ണി (മോളൂർ)"],
+        ["പാത്തുമ (എടായ്ക്കൽ)"]
+      ]],
+      ["ഉണ്ണീൻ|1896", [
+        ["പാത്തുമക്കുട്ടി (വല്ലപ്പുഴ)|1923"],
+        ["ഖാദർ ഹാജി|1925"],
+        ["മുഹമ്മദ്ഹാജി|1928"],
+        ["ഇത്തിമുണ്ണി|1931"]
+      ]]
+    ]],
+    ["ആലിയമ്മു|1882", [
+      ["കുഞ്ഞയമ്മു|1909"],
+      ["മൊയ്തുഹാജി|1915"],
+      ["ഉണ്ണീൻ III|1922"],
+      ["അബ്ദു (കട്ടുപ്പാറ)|1924"],
+      ["അമ്മായി (പള്ളിക്കുന്ന്)"]
+    ]]
+  ]]]
+},
+{
+  id: 't2', title: 'മമ്മദ് ഹാജി ശാഖ', sub: 'Mammad Haji & Fathima · page 2', root: ['മമ്മദ് ഹാജി + ഫാത്തിമ'],
+  data: [["മമ്മദ് ഹാജി + ഫാത്തിമ", [
+    ["അയമുട്ടി ഹാജി + ആയിഷ", [
+      ["മുഹമ്മദ്കുട്ടി (മണി) + മറിയ", [
+        ["റാഷിദ് + ഷെറീന", [["ഷുഅഫാത്തിമ"],["നൂർ ഫാത്തിമ"],["എമീറ മുഹമ്മദ്"]]],
+        ["റസീന"],
+        ["ആസിഫ്"]
+      ]],
+      ["നബീസ"], ["റംല"], ["കദീജ"], ["ജമീല"], ["ആയിഷ"], ["നസീമ"],
+      ["നസീറലി + മുഹ്സിന", [["ഫാത്തിമ നദ"],["ഫാത്തിമ നഷ"],["നഹ്വ"]]],
+      ["നിസാർ + സമീറ", [["ഫാത്തിമ റിൻഷ"],["മുഹമ്മദ് അക്ബർ"],["റിയ ഫാത്തിമ"]]]
+    ]],
+    ["ഇമ്മു (കുമരംപുത്തൂർ)"],
+    ["വീരാൻകുട്ടി + റംല", [
+      ["ശബീർ + മിൻഹാജ്", [["ഫത്താഹ്"],["മുഹമ്മദ് ഫാദി"],["ഹസ്‌ലിൻ ഫാത്തിമ"]]],
+      ["ശബാന"]
+    ]],
+    ["ആയിഷക്കുട്ടി"]
+  ]]]
+},
+{
+  id: 't3', title: 'ഐദ്രു മുസ്ലിയാർ ശാഖ', sub: 'Eidru Musliyar & Ummachu · page 3', root: ['ഐദ്രു മുസ്ലിയാർ + ഉമ്മാച്ചു'],
+  data: [["ഐദ്രു മുസ്ലിയാർ + ഉമ്മാച്ചു", [
+    ["മുഹമ്മദ് എന്ന വാപ്പു + സൈനബ (Late)", [
+      ["അഷ്‌റഫ് + ഷഹ്നാസ്", [["മുഹമ്മദ് നദിൽ"],["മുഹമ്മദ് അഖിൽ"],["മുഹമ്മദ് അദുൽ"]]],
+      ["നസീമ"], ["സൈഫുന്നീസ"], ["റജീന"], ["ഫൗസിയ"]
+    ]],
+    ["വീരാൻകുട്ടി ഹാജി + ആസ്യ (Late), മൈമുന", [
+      ["ഫാത്തിമത്ത് സുഹ്റ"],
+      ["മുഹമ്മദലി + സബീന", [["മുഹമ്മദ് ഷമ്മാസലി"],["ആസ്യ ഷെറിൻ"],["മുഹമ്മദ് മാസിൻ അലി"]]],
+      ["ഖാലിദ് + ജുബൈരിയ", [["ഷാൻ"],["ഷിസ"]]],
+      ["ഇസ്മായിൽ + സൽവ", [["സയാൻ"],["റൈഹാൻ"]]],
+      ["സുമയ്യ"], ["സുഹൈബ"]
+    ]],
+    ["അബൂബക്കർ ഹാജി + സുഹ്റ", [
+      ["നിസാർ + അനാൻ", [["നിഹാൻ"],["ഫെസിൻ"],["ഫൈസിൻ"],["ഐമിൻ ഐദ്"]]],
+      ["നസീറ"], ["ഫാത്തിമ നസ്റിൻ"]
+    ]],
+    ["ഖദീജ"],
+    ["അബ്ദു + സൈനബ", [["അസ്മാബി"],["ഫസീല"],["ഹസീന"],["ഷഫീഖ് + ജംസീറ"],["അൻസിയ"]]]
+  ]]]
+},
+{
+  id: 't4', title: 'ഖാദർ ഹാജി ശാഖ', sub: 'Khadar Haji & Fathima · page 4', root: ['ഖാദർ ഹാജി & ഫാത്തിമ'],
+  data: [["ഖാദർ ഹാജി & ഫാത്തിമ", [
+    ["ഉണ്ണീൻകുട്ടി ഹാജി (Late) + കുഞ്ഞീരു", [
+      ["റസിയ"],
+      ["ഷാനവാസ് + ഹൈറുന്നീസ", [["റമീസ്"],["ഹനിയ"],["സിയാന"]]],
+      ["ഫൗസിയ"],
+      ["റിയാസ് + ശംസീറ", [["റിഹാൻ"],["ലിയ"]]]
+    ]],
+    ["ഫാത്തിമക്കുട്ടി"],
+    ["മുഹമ്മദ്കുട്ടി (മാനു) + റംലത്ത്", [["ഫർസാന"],["റിസ്വാന"]]],
+    ["ഖദീജ"],
+    ["ഇസ്മായിൽ + റംല", [
+      ["മൻസൂർ + സഹല", [["മുഹമ്മദ് ഹാദിൻ"],["മുഹമ്മദ് ഹന്നാൻ"],["മുഹമ്മദ് ഹിസാൻ"],["ഫാത്തിമ ഹെൻസ"]]],
+      ["മുസ്നിദ"], ["മുർഷിദ"], ["മുഹീദ"]
+    ]],
+    ["സുലൈമാൻ + സുഹ്റ", [["മുബശ്ശിറ"],["ഷമീം"],["ഷൈമ"]]],
+    ["നബീസ"],
+    ["സഫിയ"]
+  ]]]
+},
+{
+  id: 't5', title: 'മുഹമ്മദ് ഹാജി ശാഖ', sub: 'Muhammad Haji & Khadeeja · page 5', root: ['മുഹമ്മദ് ഹാജി (Late) + ഖദീജ (Late)'],
+  data: [["മുഹമ്മദ് ഹാജി (Late) + ഖദീജ (Late)", [
+    ["നഫീസ"],
+    ["ഹംസ ഹാജി + ആയിഷാബി", [
+      ["ഷറഫുദ്ധീൻ + മുനീറ", [["ഫാത്തിമത്ത് നസ്ല"],["നുഅ്മാൻ"],["ഹനാൻ"]]],
+      ["ഖമറുസ്സമാൻ + ഷംന", [["മുഹമ്മദ് സിനാൻ"],["മുഹമ്മദ് അദ്നാൻ"],["മുഹമ്മദ് ഹംദാൻ"]]],
+      ["നുസ്രത്ത്"], ["സറീന"],
+      ["സുഹൈർ + അഫീഫ", [["ആയിശ ഹെലൻ"],["അലൈശ റൂഹി"]]]
+    ]],
+    ["ഖദീജ"],
+    ["അയമു (മാനു) + പാത്തുമക്കുട്ടി", [
+      ["സുമയ്യ"],
+      ["നൗഫൽ + റഷീദ", [["മുഹമ്മദ് നാസിം"],["മുഹമ്മദ് നസ്മിൻ"],["നസ്വ ഖദീജ"]]],
+      ["മുനീർ + സഹ്‌ല", [["അഹമ്മദ് റാസിൻ"],["അഹമ്മദ് ഷാസിൻ"],["അഹമ്മദ് ഐസിൻ"],["ഫാത്തിമ ലയ"]]]
+    ]],
+    ["പാത്തുമ്മക്കുട്ടി"]
+  ]]]
+},
+{
+  id: 't6', title: 'കുഞ്ഞയമു ശാഖ', sub: 'Kunjayamu branch · page 6', root: ['കുഞ്ഞയമു ശാഖ'],
+  data: [["കുഞ്ഞയമു ശാഖ", [
+    ["മുഹമ്മദ് + കുനുത്തു", [
+      ["പാത്തുമ"],
+      ["മമ്മദ് (കുഞ്ഞാണി) + സുഹ്റ", [
+        ["ഫസീല", [
+          ["ജാബിർ അൽത്താഫ് + ഷരീന", [["മുഹമ്മദ് ഇഹ്സാൻ"],["ഹദാൻ"],["മുഹമ്മദ്"],["ഫാത്തിമ"]]],
+          ["ജംഷീറ"],
+          ["ജബ്ബാർ + ലബീബ", [["ഷെസ സഹറിൻ"],["അയാൻ മുഹമ്മദ്"],["അമിൽ ആദം"]]],
+          ["സൗദ"]
+        ]]
+      ]],
+      ["കുഞ്ഞയമ്മു (കുഞ്ഞൂട്ടി) + ശഹർബാൻ", [
+        ["ഫൈസൽ + ജാസ്മിൻ"], ["ഫൈസാൻ"], ["മറിയം"], ["ഇസ്വ ഫാത്തിമ"], ["ഫയിസ"]
+      ]],
+      ["സുലൈഖ"], ["നബീസ"],
+      ["നാനിഫ (ഹംസ) + സുനീറ", [["ദാനിഷ്"],["റിൻഷ"],["രമീസ്"],["നൈഫാത്തിമ"]]],
+      ["റഫീഖ് + സലീന", [["ശാമിൽ"],["ശിബിൽ"],["നിസാമുദ്ധീൻ"],["ഹിസാന"]]],
+      ["നസീമ"], ["ബുഷ്ർ"]
+    ]],
+    ["ആലിയമ്മു + പാത്തുമ (Late), ഖദീജ (Late)", [
+      ["മുഹമ്മദ് (വാപ്പുട്ടി) + ആസ്യ", [
+        ["ഇർഷാദ് + സജ്ല", [["തൗഫീഖ് റഹ്മാൻ"],["അമാനു റഹ്മാൻ"],["നൂറ ഫാത്തിമ"]]],
+        ["ഫിറോസ് + സജ്ന", [["ലിൻഷ ഫാത്തിമ"],["ഷാനിൽ റഹ്മാൻ"]]],
+        ["നസീറ"]
+      ]],
+      ["ആയിശ"], ["മൈമുന"],
+      ["ഹംസ + ആയിഷ", [["ഫാസിൽ"],["ഫർസീന"],["ഫായിസ്"]]],
+      ["അശ്റഫ് + സലീന", [["സൽമാൻ ഫാരിസ്"],["ഫാത്തിമത്ത് ഷംന"],["ഷഹബാസ്"]]],
+      ["ഖദീജ", [["അഫ്സൽ"]]]
+    ]],
+    ["പാത്തുമ്മ"],
+    ["കുഞ്ഞീരാൻ + നഫീസ", [["ജംഷീറ"],["ബുഷ്ർ"],["സാബിറ"],["ഹസീന"]]],
+    ["കാദർകുട്ടി + മൈമൂന", [
+      ["പാരിജാർ"],
+      ["സൈതലവി + മുബശിറ", [["ഷിഫ്ന"],["ഷിഫാൻ"],["ഷിഫിൻ"]]],
+      ["ഷറഫുദ്ധീൻ + തെസ്നി", [["ലിയ"],["ഷാൻ"]]],
+      ["ഷമീർ + ഫർസാന", [["അസ്വ"]]]
+    ]],
+    ["ആയിഷക്കുട്ടി"]
+  ]]]
+},
+{
+  id: 't7', title: 'മൊയ്തുഹാജി ശാഖ', sub: 'Moythuhaji & Fathima · page 7', root: ['മൊയ്തുഹാജി + ഫാത്തിമ'],
+  data: [["മൊയ്തുഹാജി + ഫാത്തിമ", [
+    ["മുഹമ്മദ് എന്ന വാപ്പു ഹാജി + പാത്തുമ്മക്കുട്ടി", [
+      ["റംല"],
+      ["മുസ്തഫ + ഖദീജ", [["നൗഷാദ്"],["നൗഷിദ്"],["ഷമീർ"]]],
+      ["നബീസ (കുഞ്ഞുമ്മ)"],
+      ["മൊയ്തു + റോഷ്ന", [["ശഫ്ന"],["അൻസിയ"],["നിയ"]]],
+      ["ആയിഷ"],
+      ["ശബീർ + ആരിഫ", [["മുഹമ്മദ് ശാദി"],["ഷെയ്സ്"]]]
+    ]],
+    ["ഉമ്മയ്യ"],
+    ["പാത്തുമ്മു"],
+    ["ഹംസ + ഖദീജ (Late)", [
+      ["സൽമു"],
+      ["അലി + അനീസ", [["ഫാത്തിമത്ത് മുസൈന"],["ആയിഷ ഷുഹൈമ"],["മിൻഹ"]]],
+      ["സുഹ്റ"],
+      ["ശുഹൈബ് + ഷംന", [["ഫാത്തിമത്ത് റിൻഷ"],["മുഹമ്മദ് ഹാദി"],["മുഹമ്മദ് അയാൻ"]]],
+      ["സൗദ"], ["ജുബൈരിയ"], ["റംലത്ത്"]
+    ]],
+    ["ആലിയമ്മു + ആമിന", [
+      ["കബീർ + സൈനബ", [["ഫാത്തിമത്ത് ഷഹ്നാസ്"],["ഷെയ്ബ ഫാത്തിമ"],["മുഹമ്മദ് സിയാൻ"],["മുഹമ്മദ് ഐദിൻ അമൽ"]]],
+      ["ബഷീർ + ഷാഹിന", [["മുഹമ്മദ് ഷിയാസ്"],["ഷിഫാന"],["മുഹമ്മദ് സിയാദ്"],["ഫാത്തിമ ഷെൻസ"]]],
+      ["ലൈല"],
+      ["ഫൈസൽ + ജസ്ന", [["ഫാത്തിമത്തുൽ ഫാഹിമ"],["ജിബിൻ മുഹമ്മദ്"],["മുഹമ്മദ് ഫെയ്സാൻ"]]],
+      ["ഇല്ല്യാസ് + ഉമ്മുൽഫാരിഷ", [["മുഹമ്മദ് സിനാൻ"],["ആമിന ഷെസ"],["മുഹമ്മദ് ഷസിൻ"]]]
+    ]],
+    ["നബീസ"]
+  ]]]
+},
+{
+  id: 't8', title: 'ഉണ്ണീൻ III ശാഖ', sub: 'Unniyin III · page 8', root: ['ഉണ്ണീൻ III'],
+  data: [["ഉണ്ണീൻ III", [
+    ["സിദ്ധീഖ് (മാനു) + സുഹ്റ", [["ഷിറിൻ"],["ഷഹീദലി"],["ഷേഹ"]]],
+    ["മുഹമ്മദലി (ചെറിയമാനു) (Late) + ഹസീന", [["അനസ്"],["അഫാൻ"]]],
+    ["ഷൗക്കത്തലി (മണി) + സബ്ന", [["നിയാ ഫാത്തിമ"],["നസ്ർ"],["നൈഹ"]]],
+    ["ശാഹുൽ ഹമീദ് + സഫീറ", [["ഷിയ"],["ഇഷ"],["യാസീൻ"]]],
+    ["ഷുക്കൂർ + ഫാസിയ", [["ഷസിൻ"],["ഷസ"]]]
+  ]]]
+},
+{
+  id: 't9', title: 'അബ്ദു (കട്ടുപ്പാറ) ശാഖ', sub: 'Abdu Kattupara · page 9', root: ['അബ്ദു (കട്ടുപ്പാറ)'],
+  data: [["അബ്ദു (കട്ടുപ്പാറ)", [
+    ["നബീസ"],
+    ["മുഹമ്മദ്കുട്ടി + ഫാത്തിമ", [
+      ["ഷൗക്കത്തലി + മുനീറ", [["മുഹമ്മദ് ജാസിൽ"],["ഫാത്തിമ ജിൻസ"],["മുഹമ്മദ് ജസീൽ"]]],
+      ["കുഞ്ഞീദു + സലീന", [["മുഹമ്മദ് ഷിനാസ്"],["ഷിഫിൻ മുഹമ്മദ്"],["മുഹമ്മദ് ഷിബിൽ"]]],
+      ["അബ്ദുൽ റഷീദ് + സൽമത്ത്", [["റിഷാ ഫാത്തിമ"],["മുഹമ്മദ് റസൽ"],["മുഹമ്മദ് റിസൽ"]]],
+      ["റംലത്ത്"],
+      ["ആയിഷാബി"]
+    ]],
+    ["ഉമൈബ"]
+  ]]]
+},
+{
+  id: 't10', title: 'Andaman Branch', sub: 'Mammu · page 10', root: ['Mammu'],
+  data: [["Mammu", [
+    ["Elder Son", [["Alavi", [["Muhammed Ali Usthath"]]]]],
+    ["Mayin Hajji + Thithutti", [
+      ["Ayamu", [
+        ["Fathima (Late)"], ["Ayisha (Late)"], ["Sainaba"], ["Khadeeja"],
+        ["Abdul Vahab + KTP Rukiya", [["Arif"],["Ummer Musthafa"],["Asharudheen"],["Vahida"]]],
+        ["Saida"], ["Rukiya"], ["Subaida"]
+      ]],
+      ["Moosa + 1st Wife", [["Abdul Rahman"],["Yasmeen"],["Abdul Waheed"],["Abdul Shaheed"],["Abdul Fareed"]]],
+      ["Moosa + 2nd Wife Kadheeja", [
+        ["Abdul Rasheed", [["Sajid"],["Sohaib"]]],
+        ["Abdul Azeez & Hafsa", [["Athika"],["Hameeda"],["Arifa"],["Haseena"],["Arshad"]]]
+      ]],
+      ["Veerankutty + Ayisha", [
+        ["Mayin"], ["Salam"], ["Safiya (Late)"], ["Zulaika (Late)"], ["Jameela"],
+        ["Abdul Majid"], ["Abdul Nazir"], ["Asiya"], ["Mariya"], ["Asma"],
+        ["Safiya"], ["Zulaika"], ["Mujeeb Rahman"], ["Muhammed Rafeeque"]
+      ]],
+      ["Kunjimammu & Cholayil Fathima", [
+        ["Abdul Gafoor"], ["Hajara"],
+        ["Abdul Samad + Sakeena", [["Saleek"],["Sabira"],["Sajina"],["Sabeel"]]],
+        ["Hamza"], ["Aminabibi"], ["Abidabibi"], ["Shakeela"],
+        ["Thahirabibi (2nd wife VK Fathima)"], ["Shamsudheen"], ["Musthafa"], ["Sura"]
+      ]]
+    ]],
+    ["Alavi + Second Wife", [["Muhammed + VK Fathima", [["Abu Sabah"],["Safiya"],["Haneefa"]]]]]
+  ]]]
+}
+];
+
+/* ---------- build the tree pages ---------- */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function buildUl(nodes, isRoot){
+  const ul = document.createElement('ul');
+  ul.className = 'tree' + (isRoot ? ' top' : '');
+  nodes.forEach(n => {
+    const li = document.createElement('li');
+    const [name, year] = n[0].split('|');
+    const box = document.createElement('div');
+    box.className = 'node';
+    box.innerHTML = esc(name) + (year ? '<span class="yr">' + esc(year) + '</span>' : '');
+    li.appendChild(box);
+    if (n[1] && n[1].length) li.appendChild(buildUl(n[1], false));
+    ul.appendChild(li);
+  });
+  return ul;
+}
+
+/* ---------- static photos ----------
+   Photos are fixed in the page, not uploaded in the browser.
+   Put image files in a "photos" folder next to this HTML file, then list them here.
+   Example:  t1: [ { src: "photos/t1/unneen.jpg", caption: "ഉണ്ണീൻ I" } ],
+   Tree ids: t1 (Unniyin I) ... t10 (Andaman Branch)                              */
+const PHOTOS = {
+  // t1: [],
+  // t2: [],
+};
+
+function buildPhotoPanel(tree){
+  const items = PHOTOS[tree.id] || [];
+  const wrap = document.createElement('div');
+  wrap.className = 'photos';
+  wrap.innerHTML = `<h3>ഫോട്ടോകൾ · Photos</h3>`;
+  if (!items.length) {
+    const p = document.createElement('p');
+    p.className = 'empty';
+    p.textContent = 'Photos for this branch will be added here.';
+    wrap.appendChild(p);
+    return wrap;
+  }
+  const gallery = document.createElement('div');
+  gallery.className = 'gallery';
+  items.forEach(item => {
+    const card = document.createElement('figure');
+    card.className = 'ph';
+    card.innerHTML = `<img src="${esc(item.src)}" alt="${esc(item.caption || '')}"
+        onerror="this.style.opacity=.35;this.alt='Image not found: ${esc(item.src)}'">
+      <figcaption>${esc(item.caption || '')}</figcaption>`;
+    gallery.appendChild(card);
+  });
+  wrap.appendChild(gallery);
+  return wrap;
+}
+
+const treeNav = document.getElementById('treeNav');
+const treePages = document.getElementById('treePages');
+
+TREES.forEach((tree, idx) => {
+  // side button
+  const btn = document.createElement('button');
+  btn.innerHTML = esc(tree.title) + '<small>' + esc(tree.sub) + '</small>';
+  btn.addEventListener('click', () => showTree(tree.id));
+  treeNav.appendChild(btn);
+
+  // page
+  const page = document.createElement('div');
+  page.className = 'tree-page card';
+  page.id = 'page-' + tree.id;
+  const h = document.createElement('h2');
+  h.textContent = tree.title;
+  const meta = document.createElement('div');
+  meta.className = 'meta';
+  meta.textContent = tree.sub;
+  const scroll = document.createElement('div');
+  scroll.className = 'tree-scroll';
+  scroll.appendChild(buildUl(tree.data, true));
+  page.append(h, meta, scroll, buildPhotoPanel(tree));
+  treePages.appendChild(page);
+});
+
+function showTree(id){
+  document.querySelectorAll('#treeNav button').forEach((b, i) => b.classList.toggle('active', TREES[i].id === id));
+  document.querySelectorAll('.tree-page').forEach(p => p.classList.toggle('active', p.id === 'page-' + id));
+}
+showTree(TREES[0].id);
+
+/* ---------- committee (static) ----------
+   Add members here. Each entry is shown in the table below.
+   Example: { name: "Full name", role: "President", phone: "+91 00000 00000", email: "name@example.com", place: "Town" }  */
+const COMMITTEE = [
+  // { name: "", role: "", phone: "", email: "", place: "" },
+];
+
+const cBody = document.getElementById('cBody');
+const cEmpty = document.getElementById('cEmpty');
+function renderMembers(){
+  cBody.innerHTML = '';
+  COMMITTEE.forEach((m, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${i+1}</td><td>${esc(m.name)}</td><td>${esc(m.role)}</td>
+      <td>${esc(m.phone)}</td><td>${esc(m.email)}</td><td>${esc(m.place)}</td>`;
+    cBody.appendChild(tr);
+  });
+  cEmpty.style.display = COMMITTEE.length ? 'none' : 'block';
+}
+renderMembers();
+
+</script>
+</body>
+</html>
