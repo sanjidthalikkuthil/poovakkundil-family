@@ -425,6 +425,25 @@ nav button.active::after{display:none}
   nav button{min-height:44px}
   .btn,.lang-switch button{min-height:44px}
 }
+
+/* ---------- mobile: vertical tree (no sideways scrolling) ---------- */
+@media (max-width:768px){
+  .tree-scroll{overflow:visible;padding:10px 8px;border-radius:16px}
+  .tree-scroll .tree,.tree-scroll .tree ul{display:block;min-width:0;margin:0;padding:0}
+  .tree-scroll .tree ul{margin-left:14px;padding:4px 0 2px 16px;border-left:2px solid rgba(15,122,128,.35);position:relative}
+  .tree-scroll .tree li{display:block;position:relative;text-align:left;padding:6px 0 6px 18px;min-width:0;flex:none}
+  .tree-scroll .tree li::before{content:'';position:absolute;left:-16px;top:20px;width:14px;height:0;border-top:2px solid rgba(15,122,128,.35);right:auto;opacity:1}
+  .tree-scroll .tree li::after,.tree-scroll .tree ul::before{display:none}
+  .tree-scroll .tree > li{padding:0 0 4px 0}
+  .tree-scroll .tree > li::before{display:none}
+  .tree-scroll .tree > li > .node{margin-top:0}
+  .tree-scroll .node{display:inline-block;max-width:100%;min-width:0;font-size:14px;line-height:1.45;padding:6px 12px;white-space:normal;box-shadow:0 4px 10px rgba(7,59,70,.1)}
+  .tree-scroll .node.root{font-size:15px;padding:8px 14px}
+  .tree-scroll .node:hover{transform:none}
+  .tree-scroll .tree-hint{display:block}
+}
+.tree-hint{display:none;font-size:12.5px;color:var(--muted);margin:0 0 10px;text-align:center}
+@media (min-width:769px){.tree-hint{display:none!important}}
 </style>
 </head>
 <body>
@@ -1016,8 +1035,11 @@ TREES.forEach((tree, idx) => {
   meta.textContent = tree.sub;
   const scroll = document.createElement('div');
   scroll.className = 'tree-scroll';
+  const hint = document.createElement('p');
+  hint.className = 'tree-hint';
+  hint.textContent = 'Tip: the branch is shown top to bottom on phones. Scroll down to follow each generation.';
   scroll.appendChild(buildUl(tree.data, true));
-  page.append(h, meta, scroll, buildPhotoPanel(tree));
+  page.append(h, meta, hint, scroll, buildPhotoPanel(tree));
   treePages.appendChild(page);
 });
 
