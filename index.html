@@ -360,7 +360,7 @@ nav button::after{content:'';position:absolute;left:50%;bottom:0;height:2px;widt
 nav button:hover::after{width:60%}
 nav button.active::after{display:none}
 
-header{background-size:200% 200%;animation:shimmer 12s linear infinite}
+
 
 @media (max-width:900px){
   .stats{grid-template-columns:repeat(3,1fr)}
@@ -421,6 +421,10 @@ header{background-size:200% 200%;animation:shimmer 12s linear infinite}
   .contact li{font-size:12px}
 }
 @media (max-width:380px){.comm-grid{grid-template-columns:1fr}}
+@media (max-width:768px){
+  nav button{min-height:44px}
+  .btn,.lang-switch button{min-height:44px}
+}
 </style>
 </head>
 <body>
