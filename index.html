@@ -444,6 +444,65 @@ nav button.active::after{display:none}
 }
 .tree-hint{display:none;font-size:12.5px;color:var(--muted);margin:0 0 10px;text-align:center}
 @media (min-width:769px){.tree-hint{display:none!important}}
+
+/* ---------- phone refinements (v4) ---------- */
+.lbl-short{display:none}
+@media (max-width:768px){
+  .lbl-full{display:none}
+  .lbl-short{display:inline}
+  /* bottom tab bar */
+  nav{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:40;margin:0;max-width:none;padding:6px 8px calc(6px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(15,122,128,.15);box-shadow:0 -8px 24px rgba(7,59,70,.12)}
+  nav button{min-height:50px;padding:6px 2px;border-radius:14px;border:0;background:transparent;color:var(--muted);font-size:11.5px;font-weight:600;box-shadow:none;transform:none!important}
+  nav button:hover{transform:none;box-shadow:none;color:var(--muted)}
+  nav button::after{display:none}
+  nav button.active{background:linear-gradient(120deg,var(--teal),var(--teal-2));color:#fff;box-shadow:0 6px 14px rgba(11,85,99,.3)}
+  main{padding:12px 10px 110px}
+  header{padding:10px 14px}
+  header h1{font-size:17px}
+
+  /* history: readable, compact, same text */
+  .history-box{padding:18px 16px 16px;margin-top:14px;border-radius:16px}
+  .history-box h2{font-size:18px;margin-bottom:14px}
+  .history-box h2::after{width:60px;margin-top:8px}
+  .history-box p{font-size:14.5px;line-height:1.75;text-indent:0;text-align:left;margin-bottom:12px;letter-spacing:.1px}
+  .history-box p.en{font-size:14px;line-height:1.7;text-align:left}
+  .lang-switch{margin-bottom:10px}
+  .lang-switch button{padding:6px 12px;font-size:12.5px}
+  .hero{padding:18px 10px 0}
+  .hero-title{font-size:30px}
+
+  /* in-memory portraits: 4 per row */
+  .memorial{padding:20px 10px 16px;border-radius:18px}
+  .memo-head{margin-bottom:14px}
+  .memo-head h2{font-size:19px}
+  .memo-grid{grid-template-columns:repeat(4,1fr);gap:8px}
+  .memo{padding:4px 3px 6px;border-radius:12px}
+  .memo img{border-radius:9px}
+  .memo .nm{font-size:10px;line-height:1.3;margin-top:5px}
+  .memo:hover{transform:none}
+
+  /* committee: small avatars */
+  .comm-hero{padding:20px 14px;border-radius:20px;margin-bottom:16px}
+  .comm-hero h2{font-size:21px}
+  .comm-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .comm-card{padding:18px 10px 12px;border-radius:18px}
+  .comm-card::before{height:60px}
+  .avatar{width:68px;height:68px;margin-bottom:8px;padding:3px}
+  .avatar .initials{font-size:20px}
+  .comm-card h3{font-size:14px;margin:2px 0 6px;line-height:1.3}
+  .role{font-size:10px;padding:3px 9px}
+  .contact{margin-top:10px;gap:6px}
+  .contact li{font-size:11px;padding:6px 6px;gap:6px}
+  .contact .ico{width:20px;height:20px;font-size:10px;border-radius:6px}
+
+  /* events */
+  .event-card{padding:16px}
+  .events-head{margin:30px 0 12px}
+}
+@media (max-width:340px){
+  .memo-grid{grid-template-columns:repeat(3,1fr)}
+  .comm-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -457,10 +516,10 @@ nav button.active::after{display:none}
 </header>
 
 <nav>
-  <button class="tab-btn active" data-tab="home">Home · ഹോം</button>
-  <button class="tab-btn" data-tab="trees">കുടുംബ പരമ്പര · Family Trees</button>
-  <button class="tab-btn" data-tab="gallery">ഗാലറി · Gallery</button>
-  <button class="tab-btn" data-tab="committee">കമ്മിറ്റി · Committee</button>
+  <button class="tab-btn active" data-tab="home"><span class="lbl-full">Home · ഹോം</span><span class="lbl-short">Home</span></button>
+  <button class="tab-btn" data-tab="trees"><span class="lbl-full">കുടുംബ പരമ്പര · Family Trees</span><span class="lbl-short">Family</span></button>
+  <button class="tab-btn" data-tab="gallery"><span class="lbl-full">ഗാലറി · Gallery</span><span class="lbl-short">Gallery</span></button>
+  <button class="tab-btn" data-tab="committee"><span class="lbl-full">കമ്മിറ്റി · Committee</span><span class="lbl-short">Committee</span></button>
 </nav>
 
 <main>
